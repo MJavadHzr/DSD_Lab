@@ -1,0 +1,376 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "07/26/2021 10:35:37"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    top_module
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module top_module_vlg_sample_tst(
+	A_00,
+	A_01,
+	A_02,
+	A_03,
+	A_10,
+	A_11,
+	A_12,
+	A_13,
+	A_20,
+	A_21,
+	A_22,
+	A_23,
+	A_30,
+	A_31,
+	A_32,
+	A_33,
+	div_11,
+	sampler_tx
+);
+input  A_00;
+input  A_01;
+input  A_02;
+input  A_03;
+input  A_10;
+input  A_11;
+input  A_12;
+input  A_13;
+input  A_20;
+input  A_21;
+input  A_22;
+input  A_23;
+input  A_30;
+input  A_31;
+input  A_32;
+input  A_33;
+input  div_11;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(A_00 or A_01 or A_02 or A_03 or A_10 or A_11 or A_12 or A_13 or A_20 or A_21 or A_22 or A_23 or A_30 or A_31 or A_32 or A_33 or div_11)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module top_module_vlg_check_tst (
+	divisible,
+	sampler_rx
+);
+input  divisible;
+input sampler_rx;
+
+reg  divisible_expected;
+
+reg  divisible_prev;
+
+reg  divisible_expected_prev;
+
+reg  last_divisible_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:1] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 1'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	divisible_prev = divisible;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	divisible_expected_prev = divisible_expected;
+end
+
+
+
+// expected divisible
+initial
+begin
+	divisible_expected = 1'bX;
+end 
+// generate trigger
+always @(divisible_expected or divisible)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected divisible = %b | ",divisible_expected_prev);
+	$display("| real divisible = %b | ",divisible_prev);
+`endif
+	if (
+		( divisible_expected_prev !== 1'bx ) && ( divisible_prev !== divisible_expected_prev )
+		&& ((divisible_expected_prev !== last_divisible_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port divisible :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", divisible_expected_prev);
+		$display ("     Real value = %b", divisible_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_divisible_exp = divisible_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#10000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module top_module_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg A_00;
+reg A_01;
+reg A_02;
+reg A_03;
+reg A_10;
+reg A_11;
+reg A_12;
+reg A_13;
+reg A_20;
+reg A_21;
+reg A_22;
+reg A_23;
+reg A_30;
+reg A_31;
+reg A_32;
+reg A_33;
+reg div_11;
+// wires                                               
+wire divisible;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+top_module i1 (
+// port map - connection between master ports and signals/registers   
+	.A_00(A_00),
+	.A_01(A_01),
+	.A_02(A_02),
+	.A_03(A_03),
+	.A_10(A_10),
+	.A_11(A_11),
+	.A_12(A_12),
+	.A_13(A_13),
+	.A_20(A_20),
+	.A_21(A_21),
+	.A_22(A_22),
+	.A_23(A_23),
+	.A_30(A_30),
+	.A_31(A_31),
+	.A_32(A_32),
+	.A_33(A_33),
+	.div_11(div_11),
+	.divisible(divisible)
+);
+
+// A_33
+initial
+begin
+	A_33 = 1'b0;
+end 
+
+// A_32
+initial
+begin
+	A_32 = 1'b0;
+end 
+
+// A_31
+initial
+begin
+	A_31 = 1'b0;
+end 
+
+// A_30
+initial
+begin
+	A_30 = 1'b0;
+end 
+
+// A_23
+initial
+begin
+	A_23 = 1'b0;
+end 
+
+// A_22
+initial
+begin
+	A_22 = 1'b0;
+end 
+
+// A_21
+initial
+begin
+	A_21 = 1'b0;
+end 
+
+// A_20
+initial
+begin
+	A_20 = 1'b0;
+	A_20 = #3000000 1'b1;
+	A_20 = #1000000 1'b0;
+end 
+
+// A_13
+initial
+begin
+	A_13 = 1'b0;
+end 
+
+// A_12
+initial
+begin
+	A_12 = 1'b0;
+	A_12 = #2000000 1'b1;
+	A_12 = #1000000 1'b0;
+end 
+
+// A_11
+initial
+begin
+	A_11 = 1'b0;
+	A_11 = #1000000 1'b1;
+	A_11 = #1000000 1'b0;
+	A_11 = #1000000 1'b1;
+	A_11 = #1000000 1'b0;
+end 
+
+// A_10
+initial
+begin
+	A_10 = 1'b0;
+end 
+
+// A_03
+initial
+begin
+	A_03 = 1'b0;
+end 
+
+// A_02
+initial
+begin
+	A_02 = 1'b0;
+end 
+
+// A_01
+initial
+begin
+	A_01 = 1'b1;
+	A_01 = #1000000 1'b0;
+	A_01 = #1000000 1'b1;
+	A_01 = #1000000 1'b0;
+end 
+
+// A_00
+initial
+begin
+	A_00 = 1'b1;
+	A_00 = #2000000 1'b0;
+	A_00 = #1000000 1'b1;
+	A_00 = #1000000 1'b0;
+end 
+
+// div_11
+initial
+begin
+	div_11 = 1'b0;
+	div_11 = #3000000 1'b1;
+	div_11 = #1000000 1'b0;
+end 
+
+top_module_vlg_sample_tst tb_sample (
+	.A_00(A_00),
+	.A_01(A_01),
+	.A_02(A_02),
+	.A_03(A_03),
+	.A_10(A_10),
+	.A_11(A_11),
+	.A_12(A_12),
+	.A_13(A_13),
+	.A_20(A_20),
+	.A_21(A_21),
+	.A_22(A_22),
+	.A_23(A_23),
+	.A_30(A_30),
+	.A_31(A_31),
+	.A_32(A_32),
+	.A_33(A_33),
+	.div_11(div_11),
+	.sampler_tx(sampler)
+);
+
+top_module_vlg_check_tst tb_out(
+	.divisible(divisible),
+	.sampler_rx(sampler)
+);
+endmodule
+
