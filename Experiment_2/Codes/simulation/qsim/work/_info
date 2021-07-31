@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\LEGION\Desktop\DSD_Lab\DSD_Lab\Experiment_2\Codes\simulation\qsim
+vtop_module
+Z1 I>T[AbkOE06=ggLNLjF0z>1
+Z2 Vgn8V71QkM:Xle^gzfhl_T3
+Z3 dC:\Users\LEGION\Desktop\DSD_Lab\DSD_Lab\Experiment_2\Codes\simulation\qsim
+Z4 w1627723178
+Z5 8schematic_seq.vo
+Z6 Fschematic_seq.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+!i10b 1
+Z9 !s100 U4z>B`@a>f16FeU3EQhAH2
+!s85 0
+Z10 !s108 1627723178.808000
+Z11 !s107 schematic_seq.vo|
+Z12 !s90 -work|work|schematic_seq.vo|
+!s101 -O0
+vtop_module_vlg_check_tst
+!i10b 1
+!s100 WQ2EWUVn0SdCV<0W`mjgn1
+Ih?hHPPEgKK?9j_4F?LHdA2
+V:VC__IVm]bnlgS2H[foAT3
+R3
+Z13 w1627723175
+Z14 8schematic_seq.vt
+Z15 Fschematic_seq.vt
+L0 67
+R7
+r1
+!s85 0
+31
+Z16 !s108 1627723178.864000
+Z17 !s107 schematic_seq.vt|
+Z18 !s90 -work|work|schematic_seq.vt|
+!s101 -O0
+R8
+vtop_module_vlg_sample_tst
+!i10b 1
+!s100 UYz:W59f<B:O@@j:IN6=31
+IIQZLeRT;XK2U8k>6a3zRl1
+V9@f=b^?>00h^_LK]8>g1j0
+R3
+R13
+R14
+R15
+L0 29
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8
+vtop_module_vlg_vec_tst
+!i10b 1
+!s100 AH?;LG?S>2nVe`_GYHBMD1
+IC41IHDjT_kh<W0kIbGT8S2
+V@X@`LbbZn]NJ=oUzV>iWb1
+R3
+R13
+R14
+R15
+L0 297
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8

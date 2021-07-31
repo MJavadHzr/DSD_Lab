@@ -1,0 +1,565 @@
+$comment
+	File created using the following command:
+		vcd file schematic_seq.msim.vcd -direction
+$end
+$date
+	Sat Jul 31 13:49:39 2021
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module top_module_vlg_vec_tst $end
+$var reg 1 ! clear $end
+$var reg 1 " clk $end
+$var reg 1 # Ent $end
+$var reg 1 $ IN $end
+$var reg 1 % OUT $end
+$var reg 1 & T $end
+$var wire 1 ' close $end
+$var wire 1 ( open $end
+$var wire 1 ) test0 $end
+$var wire 1 * test1 $end
+$var wire 1 + test2 $end
+$var wire 1 , test3 $end
+$var wire 1 - sampler $end
+$scope module i1 $end
+$var wire 1 . gnd $end
+$var wire 1 / vcc $end
+$var wire 1 0 unknown $end
+$var tri1 1 1 devclrn $end
+$var tri1 1 2 devpor $end
+$var tri1 1 3 devoe $end
+$var wire 1 4 inst|inst8~combout $end
+$var wire 1 5 inst|inst9~combout $end
+$var wire 1 6 inst|inst10~combout $end
+$var wire 1 7 IN~input_o $end
+$var wire 1 8 clk~input_o $end
+$var wire 1 9 close~output_o $end
+$var wire 1 : open~output_o $end
+$var wire 1 ; test0~output_o $end
+$var wire 1 < test1~output_o $end
+$var wire 1 = test2~output_o $end
+$var wire 1 > test3~output_o $end
+$var wire 1 ? inst|inst1~0_combout $end
+$var wire 1 @ clear~input_o $end
+$var wire 1 A inst|inst1~q $end
+$var wire 1 B inst|inst2~0_combout $end
+$var wire 1 C inst|inst2~q $end
+$var wire 1 D inst|inst3~0_combout $end
+$var wire 1 E inst|inst3~q $end
+$var wire 1 F inst14~0_combout $end
+$var wire 1 G OUT~input_o $end
+$var wire 1 H Ent~input_o $end
+$var wire 1 I inst10|inst3~0_combout $end
+$var wire 1 J inst11|inst8~0_combout $end
+$var wire 1 K inst|inst~0_combout $end
+$var wire 1 L inst|inst~q $end
+$var wire 1 M inst7~0_combout $end
+$var wire 1 N T~input_o $end
+$var wire 1 O inst19~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+0%
+0&
+1'
+0(
+0)
+0*
+0+
+0,
+x-
+0.
+1/
+x0
+11
+12
+13
+04
+05
+06
+07
+08
+19
+0:
+0;
+0<
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+0D
+0E
+1F
+0G
+0H
+0I
+0J
+0K
+0L
+0M
+0N
+0O
+$end
+#1000
+1"
+18
+0-
+#2000
+1$
+1#
+1!
+0"
+17
+1H
+1@
+08
+1-
+1I
+16
+15
+14
+#3000
+1"
+18
+0-
+#4000
+0"
+08
+1-
+#5000
+1"
+18
+0-
+#6000
+1&
+0"
+1N
+08
+1-
+1J
+1O
+1K
+1D
+1B
+1?
+1:
+1(
+#7000
+1"
+18
+0-
+1L
+1M
+0K
+04
+1;
+1)
+09
+0'
+#8000
+0"
+08
+1-
+#9000
+1"
+18
+0-
+0L
+0M
+1K
+14
+0;
+0)
+19
+1'
+1A
+1M
+0?
+05
+1<
+1*
+09
+0'
+#10000
+0"
+08
+1-
+#11000
+1"
+18
+0-
+1L
+0K
+04
+1;
+1)
+#12000
+0"
+08
+1-
+#13000
+1"
+18
+0-
+0L
+1K
+14
+0;
+0)
+0A
+0M
+1?
+15
+0<
+0*
+19
+1'
+1C
+1M
+0B
+06
+1=
+1+
+09
+0'
+#14000
+0"
+08
+1-
+#15000
+1"
+18
+0-
+1L
+0K
+04
+1;
+1)
+#16000
+0"
+08
+1-
+#17000
+1"
+18
+0-
+0L
+1K
+14
+0;
+0)
+1A
+0?
+05
+1<
+1*
+#18000
+0"
+08
+1-
+#19000
+1"
+18
+0-
+1L
+0K
+04
+1;
+1)
+#20000
+0"
+08
+1-
+#21000
+1"
+18
+0-
+0L
+1K
+14
+0;
+0)
+0A
+1?
+15
+0<
+0*
+0C
+0M
+1B
+16
+0=
+0+
+19
+1'
+1E
+1M
+0D
+1>
+1,
+09
+0'
+#22000
+0"
+08
+1-
+#23000
+1"
+18
+0-
+1L
+0K
+04
+1;
+1)
+#24000
+0"
+08
+1-
+#25000
+1"
+18
+0-
+0L
+1K
+14
+0;
+0)
+1A
+0?
+05
+1<
+1*
+#26000
+0"
+08
+1-
+#27000
+1"
+18
+0-
+1L
+0K
+04
+1;
+1)
+#28000
+0"
+08
+1-
+#29000
+1"
+18
+0-
+0L
+1K
+14
+0;
+0)
+0A
+1?
+15
+0<
+0*
+1C
+0B
+06
+1=
+1+
+#30000
+0"
+08
+1-
+#31000
+1"
+18
+0-
+1L
+0K
+04
+1;
+1)
+#32000
+0"
+08
+1-
+#33000
+1"
+18
+0-
+0L
+1K
+14
+0;
+0)
+1A
+0?
+05
+1<
+1*
+#34000
+0"
+08
+1-
+#35000
+1"
+18
+0-
+1L
+0K
+0F
+04
+1;
+1)
+0J
+0O
+1K
+1D
+1B
+1?
+0:
+0(
+#36000
+0"
+08
+1-
+#37000
+1"
+18
+0-
+#38000
+1%
+0$
+0#
+0"
+1G
+07
+0H
+08
+1-
+16
+15
+14
+0I
+1O
+1J
+1:
+1(
+0O
+0K
+0D
+0B
+0?
+0:
+0(
+#39000
+1"
+18
+0-
+0L
+1K
+1F
+04
+0;
+0)
+#40000
+0"
+08
+1-
+#41000
+1"
+18
+0-
+1L
+0K
+0F
+14
+1;
+1)
+0A
+1F
+1?
+05
+0<
+0*
+#42000
+0"
+08
+1-
+#43000
+1"
+18
+0-
+0L
+1K
+04
+0;
+0)
+#44000
+1$
+0"
+17
+08
+1-
+#45000
+1"
+18
+0-
+1L
+0K
+14
+1;
+1)
+1A
+0F
+0?
+15
+1<
+1*
+0C
+1F
+1B
+06
+0=
+0+
+#46000
+1#
+0"
+1H
+08
+1-
+1I
+0J
+1O
+1K
+1D
+0B
+1?
+1:
+1(
+#47000
+1"
+18
+0-
+#48000
+0"
+08
+1-
+#49000
+1"
+18
+0-
+#50000

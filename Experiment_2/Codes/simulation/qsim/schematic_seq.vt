@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "07/31/2021 01:44:26"
+// Generated on "07/31/2021 13:49:35"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    top_module
 // 
@@ -67,30 +67,54 @@ endmodule
 module top_module_vlg_check_tst (
 	close,
 	open,
+	test0,
+	test1,
+	test2,
+	test3,
 	sampler_rx
 );
 input  close;
 input  open;
+input  test0;
+input  test1;
+input  test2;
+input  test3;
 input sampler_rx;
 
 reg  close_expected;
 reg  open_expected;
+reg  test0_expected;
+reg  test1_expected;
+reg  test2_expected;
+reg  test3_expected;
 
 reg  close_prev;
 reg  open_prev;
+reg  test0_prev;
+reg  test1_prev;
+reg  test2_prev;
+reg  test3_prev;
 
 reg  close_expected_prev;
 reg  open_expected_prev;
+reg  test0_expected_prev;
+reg  test1_expected_prev;
+reg  test2_expected_prev;
+reg  test3_expected_prev;
 
 reg  last_close_exp;
 reg  last_open_exp;
+reg  last_test0_exp;
+reg  last_test1_exp;
+reg  last_test2_exp;
+reg  last_test3_exp;
 
 reg trigger;
 
 integer i;
 integer nummismatches;
 
-reg [1:2] on_first_change ;
+reg [1:6] on_first_change ;
 
 
 initial
@@ -98,7 +122,7 @@ begin
 trigger = 0;
 i = 0;
 nummismatches = 0;
-on_first_change = 2'b1;
+on_first_change = 6'b1;
 end
 
 // update real /o prevs
@@ -107,6 +131,10 @@ always @(trigger)
 begin
 	close_prev = close;
 	open_prev = open;
+	test0_prev = test0;
+	test1_prev = test1;
+	test2_prev = test2;
+	test3_prev = test3;
 end
 
 // update expected /o prevs
@@ -115,6 +143,10 @@ always @(trigger)
 begin
 	close_expected_prev = close_expected;
 	open_expected_prev = open_expected;
+	test0_expected_prev = test0_expected;
+	test1_expected_prev = test1_expected;
+	test2_expected_prev = test2_expected;
+	test3_expected_prev = test3_expected;
 end
 
 
@@ -130,8 +162,32 @@ initial
 begin
 	close_expected = 1'bX;
 end 
+
+// expected test3
+initial
+begin
+	test3_expected = 1'bX;
+end 
+
+// expected test2
+initial
+begin
+	test2_expected = 1'bX;
+end 
+
+// expected test1
+initial
+begin
+	test1_expected = 1'bX;
+end 
+
+// expected test0
+initial
+begin
+	test0_expected = 1'bX;
+end 
 // generate trigger
-always @(close_expected or close or open_expected or open)
+always @(close_expected or close or open_expected or open or test0_expected or test0 or test1_expected or test1 or test2_expected or test2 or test3_expected or test3)
 begin
 	trigger <= ~trigger;
 end
@@ -141,8 +197,8 @@ begin
 `ifdef debug_tbench
 	$display("Scanning pattern %d @time = %t",i,$realtime );
 	i = i + 1;
-	$display("| expected close = %b | expected open = %b | ",close_expected_prev,open_expected_prev);
-	$display("| real close = %b | real open = %b | ",close_prev,open_prev);
+	$display("| expected close = %b | expected open = %b | expected test0 = %b | expected test1 = %b | expected test2 = %b | expected test3 = %b | ",close_expected_prev,open_expected_prev,test0_expected_prev,test1_expected_prev,test2_expected_prev,test3_expected_prev);
+	$display("| real close = %b | real open = %b | real test0 = %b | real test1 = %b | real test2 = %b | real test3 = %b | ",close_prev,open_prev,test0_prev,test1_prev,test2_prev,test3_prev);
 `endif
 	if (
 		( close_expected_prev !== 1'bx ) && ( close_prev !== close_expected_prev )
@@ -169,6 +225,58 @@ begin
 		nummismatches = nummismatches + 1;
 		on_first_change[2] = 1'b0;
 		last_open_exp = open_expected_prev;
+	end
+	if (
+		( test0_expected_prev !== 1'bx ) && ( test0_prev !== test0_expected_prev )
+		&& ((test0_expected_prev !== last_test0_exp) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port test0 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", test0_expected_prev);
+		$display ("     Real value = %b", test0_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_test0_exp = test0_expected_prev;
+	end
+	if (
+		( test1_expected_prev !== 1'bx ) && ( test1_prev !== test1_expected_prev )
+		&& ((test1_expected_prev !== last_test1_exp) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port test1 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", test1_expected_prev);
+		$display ("     Real value = %b", test1_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_test1_exp = test1_expected_prev;
+	end
+	if (
+		( test2_expected_prev !== 1'bx ) && ( test2_prev !== test2_expected_prev )
+		&& ((test2_expected_prev !== last_test2_exp) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port test2 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", test2_expected_prev);
+		$display ("     Real value = %b", test2_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_test2_exp = test2_expected_prev;
+	end
+	if (
+		( test3_expected_prev !== 1'bx ) && ( test3_prev !== test3_expected_prev )
+		&& ((test3_expected_prev !== last_test3_exp) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port test3 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", test3_expected_prev);
+		$display ("     Real value = %b", test3_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_test3_exp = test3_expected_prev;
 	end
 
 	trigger <= ~trigger;
@@ -198,6 +306,10 @@ reg T;
 // wires                                               
 wire close;
 wire open;
+wire test0;
+wire test1;
+wire test2;
+wire test3;
 
 wire sampler;                             
 
@@ -211,7 +323,11 @@ top_module i1 (
 	.IN(IN),
 	.open(open),
 	.OUT(OUT),
-	.T(T)
+	.T(T),
+	.test0(test0),
+	.test1(test1),
+	.test2(test2),
+	.test3(test3)
 );
 
 // clk
@@ -220,22 +336,6 @@ begin
 	clk = 1'b0;
 	clk = #1000 1'b1;
 	#1000;
-end 
-
-// clear
-initial
-begin
-	clear = 1'b0;
-	clear = #1000 1'b1;
-end 
-
-// Ent
-initial
-begin
-	Ent = 1'b0;
-	Ent = #2000 1'b1;
-	Ent = #34000 1'b0;
-	Ent = #8000 1'b1;
 end 
 
 // IN
@@ -247,19 +347,34 @@ begin
 	IN = #6000 1'b1;
 end 
 
+// Ent
+initial
+begin
+	Ent = 1'b0;
+	Ent = #2000 1'b1;
+	Ent = #36000 1'b0;
+	Ent = #8000 1'b1;
+end 
+
 // OUT
 initial
 begin
 	OUT = 1'b0;
-	OUT = #40000 1'b1;
-	OUT = #8000 1'b0;
+	OUT = #38000 1'b1;
 end 
 
 // T
 initial
 begin
 	T = 1'b0;
-	T = #2000 1'b1;
+	T = #6000 1'b1;
+end 
+
+// clear
+initial
+begin
+	clear = 1'b0;
+	clear = #2000 1'b1;
 end 
 
 top_module_vlg_sample_tst tb_sample (
@@ -275,6 +390,10 @@ top_module_vlg_sample_tst tb_sample (
 top_module_vlg_check_tst tb_out(
 	.close(close),
 	.open(open),
+	.test0(test0),
+	.test1(test1),
+	.test2(test2),
+	.test3(test3),
 	.sampler_rx(sampler)
 );
 endmodule
