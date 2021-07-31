@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "07/26/2021 10:35:37"
+// Generated on "07/31/2021 12:29:19"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    top_module
 // 
@@ -239,6 +239,8 @@ end
 initial
 begin
 	A_32 = 1'b0;
+	A_32 = #6000000 1'b1;
+	A_32 = #1000000 1'b0;
 end 
 
 // A_31
@@ -251,6 +253,8 @@ end
 initial
 begin
 	A_30 = 1'b0;
+	A_30 = #4000000 1'b1;
+	A_30 = #1000000 1'b0;
 end 
 
 // A_23
@@ -263,12 +267,16 @@ end
 initial
 begin
 	A_22 = 1'b0;
+	A_22 = #4000000 1'b1;
+	A_22 = #3000000 1'b0;
 end 
 
 // A_21
 initial
 begin
 	A_21 = 1'b0;
+	A_21 = #4000000 1'b1;
+	A_21 = #2000000 1'b0;
 end 
 
 // A_20
@@ -276,6 +284,8 @@ initial
 begin
 	A_20 = 1'b0;
 	A_20 = #3000000 1'b1;
+	A_20 = #1000000 1'b0;
+	A_20 = #2000000 1'b1;
 	A_20 = #1000000 1'b0;
 end 
 
@@ -291,6 +301,10 @@ begin
 	A_12 = 1'b0;
 	A_12 = #2000000 1'b1;
 	A_12 = #1000000 1'b0;
+	A_12 = #1000000 1'b1;
+	A_12 = #1000000 1'b0;
+	A_12 = #1000000 1'b1;
+	A_12 = #1000000 1'b0;
 end 
 
 // A_11
@@ -301,24 +315,32 @@ begin
 	A_11 = #1000000 1'b0;
 	A_11 = #1000000 1'b1;
 	A_11 = #1000000 1'b0;
+	A_11 = #2000000 1'b1;
+	A_11 = #1000000 1'b0;
 end 
 
 // A_10
 initial
 begin
 	A_10 = 1'b0;
+	A_10 = #5000000 1'b1;
+	A_10 = #1000000 1'b0;
 end 
 
 // A_03
 initial
 begin
 	A_03 = 1'b0;
+	A_03 = #4000000 1'b1;
+	A_03 = #1000000 1'b0;
 end 
 
 // A_02
 initial
 begin
 	A_02 = 1'b0;
+	A_02 = #5000000 1'b1;
+	A_02 = #1000000 1'b0;
 end 
 
 // A_01
@@ -327,6 +349,8 @@ begin
 	A_01 = 1'b1;
 	A_01 = #1000000 1'b0;
 	A_01 = #1000000 1'b1;
+	A_01 = #1000000 1'b0;
+	A_01 = #3000000 1'b1;
 	A_01 = #1000000 1'b0;
 end 
 
@@ -337,6 +361,8 @@ begin
 	A_00 = #2000000 1'b0;
 	A_00 = #1000000 1'b1;
 	A_00 = #1000000 1'b0;
+	A_00 = #1000000 1'b1;
+	A_00 = #1000000 1'b0;
 end 
 
 // div_11
@@ -344,7 +370,7 @@ initial
 begin
 	div_11 = 1'b0;
 	div_11 = #3000000 1'b1;
-	div_11 = #1000000 1'b0;
+	div_11 = #3000000 1'b0;
 end 
 
 top_module_vlg_sample_tst tb_sample (
