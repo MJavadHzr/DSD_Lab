@@ -40,6 +40,28 @@ db/
 _output_files/
 PLLJ_PLLSPE_INFO.txt
 
+# ignore modelsim generated files
+[_@]*
+*.mti
+*.dat
+*.dbs
+*.psm
+*.bak
+*.cmp
+*.html
+*.bsf
+*.idea
+wlf*
+*.wlf
+*.vstf
+*.ucdb
+*.out
+cov*/
+transcript*
+sc_dpiheader.h
+vsim.dbg
+*/work/
+
 # ignore latex generated files
 *.toc
 *.out
