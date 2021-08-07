@@ -1,4 +1,4 @@
-module OneBit_Comparator (
+module onebit_comparator (
 	input a,
 	input b,
 	input eq_prev,

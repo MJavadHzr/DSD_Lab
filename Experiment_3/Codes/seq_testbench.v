@@ -3,7 +3,7 @@ module seq_testbench();
 	reg reset, clk;
 	wire eq, gt, lt;
 	
-	Comparator_Seq comp (a, b, reset, clk, eq, gt, lt);
+	comparator_seq comp (a, b, reset, clk, eq, gt, lt);
 	
 	//generate clock
 	initial begin

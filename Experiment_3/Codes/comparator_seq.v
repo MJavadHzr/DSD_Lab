@@ -1,4 +1,4 @@
-module Comparator_Seq (
+module comparator_seq (
 	input a,
 	input b,
 	input reset,
