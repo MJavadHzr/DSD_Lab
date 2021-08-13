@@ -1,0 +1,88 @@
+module testbench;
+
+       parameter clk_c = 10;
+       parameter BANDWIDTH = 4;
+       parameter DEPTH = 8;
+       reg rstn, s_push, s_pop, clk;
+       reg[BANDWIDTH-1:0] data_in;
+       wire full, empty;
+       wire [BANDWIDTH-1:0] data_out;
+       integer i;
+
+       Stack #(.DEPTH(DEPTH),.BANDWIDTH(BANDWIDTH)) stack0 (
+        .rstn(rstn),
+        .data_in(data_in),
+        .push(s_push),
+        .pop(s_pop),
+        .clk(clk),
+        .data_out(data_out),
+        .full(full),
+        .empty(empty));
+    
+  
+    
+    initial begin
+        clk         = 0;
+        forever clk = #(clk_c/2) ~clk;
+    end
+    
+    initial begin
+        rstn = 1;
+        #clk_c    rstn = 0;
+
+    
+        $display("pushing to stack");    
+        for (i=0; i<DEPTH;i=i+1) begin
+            #clk_c push(i+1);
+        end
+
+
+        $display("push when stack is full,which will be ignore");
+        #clk_c push(4'b1111);
+        #clk_c push(4'b1111);
+        
+
+        $display("pop from stack until it is empty");
+        for (i=0; i<DEPTH;i=i+1) begin
+            #clk_c pop;
+        end
+        
+
+        $display("pop when stack is empty,which will be ignored");
+        #clk_c pop;
+        #clk_c pop;
+
+
+        $finish;
+                    
+    end
+
+    initial
+        $monitor($time,"\t result:\tpush=%b, pop=%b, data_in=%d, ptr=%d, empty=%b, full=%b, data_out=%d", s_push, s_pop, data_in, stack0.ptr, empty, full, data_out);
+
+
+        
+    task push;
+        input [BANDWIDTH-1:0]data;
+        begin
+            s_push  = 0;
+            s_pop   = 0;
+            rstn    = 0;
+            data_in = data;
+            #clk_c
+            s_push  = 1;
+        end
+    endtask
+    
+    task pop;
+        begin
+            s_push  = 0;
+            s_pop   = 0;
+            rstn    = 0;
+            #clk_c
+            s_pop   = 1;
+        end
+    endtask
+    
+endmodule //testbench
+

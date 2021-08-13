@@ -1,0 +1,28 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# ERROR: No extended dataflow license exists
+# do schematic_comb_run_msim_gate_verilog.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+. {schematic_comb.vo}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module top_module
+# -- Compiling module hard_block
+# 
+# Top level modules:
+# 	top_module
+# 
+vlog -reportprogress 300 -work work E:/dars/99-3/dsd/myProject/DSD_Lab/Experiment_1/Codes/simulation/modelsim/schematic_comb.vo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module top_module
+# -- Compiling module hard_block
+# 
+# Top level modules:
+# 	top_module
